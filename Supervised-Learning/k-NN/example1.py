@@ -41,5 +41,20 @@ red_set = train_data[labels.ravel() == 1]
 
 plot_data(blue_set, red_set)
 
+########training the classifier##########
+knn = cv.ml.KNearest_create()
+#upon success the below function will return True
+knn.train(train_data, cv.ml.ROW_SAMPLE, labels)
+
+##########predicting the label of a new data point##########
+#generating new data point
+newcomer, _ = generate_data(1)
+plot_data(blue, red)
+plt.plot(newcomer[0,0], newcomer[0,1], 'go', markersize=14);
+
+ret, results, neighbor, dist = knn.findNearest(newcomer, 3)
+print("Predicted label:\t", results)
+print("Neighbor's label:\t", neighbor)
+print("Distance to neighbor:\t", dist)
 
 
