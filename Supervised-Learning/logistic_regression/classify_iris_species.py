@@ -51,5 +51,5 @@ metrics.accuracy_score(y_train, y_pred)
 _, y_pred = lr.predict(X_test)
 metrics.accuracy_score(y_test, y_pred)
 
-### to do - build the same model for all four class label and check it's accuracy ###
+### to do - build the same model for all three class label and check it's accuracy ###
 
